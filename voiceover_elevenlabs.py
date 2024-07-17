@@ -1,8 +1,11 @@
 from elevenlabs import VoiceSettings
 from elevenlabs.client import ElevenLabs
 
+# GitHub Links:
+# elevenlabs API: https://github.com/elevenlabs/elevenlabs-python
+
 # Initialize ElevenLabs client with your API key
-client = ElevenLabs(api_key="YOUR_API_KEY_HERE")
+client = ElevenLabs(api_key="sk_a814c38d7aee36e34104c4159fc5935c19034016f180e748")
 
 
 def text_to_speech_file(text: str, voice_id: str, file_name: str) -> str:
