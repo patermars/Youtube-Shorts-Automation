@@ -3,10 +3,6 @@ body {
     background-color: #f0f0f0;
 }
 
-p {
-    align-content: center;
-    justify-content: center;
-}
 .container {
     max-width: 1000px;
     margin: 40px auto;
@@ -14,6 +10,7 @@ p {
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allows content to grow and take available space */
 }
 .input-field {
     margin-bottom: 20px;
@@ -49,4 +46,14 @@ p {
 }
 .generate-btn:hover {
     background-color: #3e8e41;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #dad8d8;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
