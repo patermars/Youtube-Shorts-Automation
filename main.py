@@ -45,7 +45,7 @@ def create_audio_from_text(file_path: str, voice_id: str, output_name: str) -> s
         print(f"An error occurred while creating audio: {e}")
         return ""
 
-def generate_final_video(gameplay_video_path: str = 'gameplay.mp4', heading_audio_path: str ,story_audio_path: str, subtitle_path: str, output_file: str = 'final.mp4') -> None:
+def generate_final_video(heading_audio_path: str ,story_audio_path: str, subtitle_path: str,gameplay_video_path: str = 'gameplay.mp4',output_file: str = 'final.mp4') -> None:
     """
     Generates the final video with the given components.
 
@@ -90,18 +90,7 @@ def generate_final_video(gameplay_video_path: str = 'gameplay.mp4', heading_audi
     except Exception as e:
         print(f"An error occurred while generating the video: {e}")
 
-if __name__ == "__main__":
-    # Define file paths and parameters
-    heading_txt_path = 'heading.txt'
-    story_txt_path = 'story.txt'
-    gameplay_video_path = 'gameplay.mp4'
-    heading_voice_id = "ohiRYqXiLWMhtwmxSKao"
-    story_voice_id = "ohiRYqXiLWMhtwmxSKao"
-    heading_audio_name = "heading"
-    story_audio_name = "story"
-    subtitle_model = "base.en"
-    subtitle_output_file = "story.srt"
-    final_output_file = "final.mp4"
+def main():
 
     # Create heading audio
     heading_audio_path = create_audio_from_text(heading_txt_path, heading_voice_id, heading_audio_name)
@@ -114,3 +103,18 @@ if __name__ == "__main__":
 
     # Generate final video
     generate_final_video(gameplay_video_path, heading_audio_path, story_audio_path, subtitle_output_file, final_output_file)
+
+
+if __name__ == "__main__":
+    # Define file paths and parameters
+    heading_txt_path = 'heading.txt'
+    story_txt_path = 'story.txt'
+    gameplay_video_path = 'gameplay.mp4'
+    heading_voice_id = "ohiRYqXiLWMhtwmxSKao"
+    story_voice_id = "ohiRYqXiLWMhtwmxSKao"
+    heading_audio_name = "heading"
+    story_audio_name = "story"
+    subtitle_model = "base.en"
+    subtitle_output_file = "story.srt"
+    final_output_file = "final.mp4"
+    main()
