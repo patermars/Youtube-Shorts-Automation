@@ -5,6 +5,12 @@ from moviepy.video.io.VideoFileClip import VideoFileClip
 from voiceover_elevenlabs import text_to_speech_file
 from subtitle_stablets import generate_srt_file
 
+# GitHub Links:
+# openai-whisper: https://github.com/openai/whisper
+# stable-whisper: https://github.com/jianfch/stable-whisper
+# moviepy: https://github.com/Zulko/moviepy
+# elevenlabs API: https://github.com/elevenlabs/elevenlabs-python
+
 def subtitle_generator(txt: str) -> TextClip:
     """
     Generates a subtitle text clip.
