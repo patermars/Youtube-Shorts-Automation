@@ -45,7 +45,7 @@ def create_audio_from_text(file_path: str, voice_id: str, output_name: str) -> s
         print(f"An error occurred while creating audio: {e}")
         return ""
 
-def generate_final_video(gameplay_video_path: str, heading_audio_path: str, story_audio_path: str, subtitle_path: str, output_file: str) -> None:
+def generate_final_video(gameplay_video_path: str = 'gameplay.mp4', heading_audio_path: str ,story_audio_path: str, subtitle_path: str, output_file: str = 'final.mp4') -> None:
     """
     Generates the final video with the given components.
 
