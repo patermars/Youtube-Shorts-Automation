@@ -1,5 +1,9 @@
 import stable_whisper
 
+# GitHub Links:
+# openai-whisper: https://github.com/openai/whisper
+# stable-whisper: https://github.com/jianfch/stable-whisper
+
 
 def generate_srt_file(model_name: str, audio_path: str, output_file: str = 'output.srt') -> None:
     """
