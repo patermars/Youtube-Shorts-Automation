@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YT Shorts Automation</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="static/style.css" type="text/css">
 </head>
 <body>
     <div class="container">
-        <h2>YT Shorts Automation</h2>
+        <!-- <h2>YT Shorts Automation</h2> -->
         <form id="automation-form">
             <div class="input-field">
                 <label for="heading">Heading:</label>
@@ -24,12 +24,17 @@
             </div>
             <button class="generate-btn" id="generate-btn">Generate</button>
         </form>
+
+        <div class="input-field">
+            <label for="progress-log">Progress Log:</label>
+            <textarea id="progress-log" readonly></textarea>
+        </div>
     </div>
     
     <footer>
         <p>Find this project on <a href="https://github.com/patermars/Youtube-Shorts-Automation" target="_blank">GitHub</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="static/script.js"></script>
 </body>
 </html>

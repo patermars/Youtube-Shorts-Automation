@@ -1,6 +1,6 @@
-const generateBtn = document.getElementById('generate-btn');
-generateBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+document.getElementById('generate-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    const form = document.getElementById('automation-form');
     const heading = document.getElementById('heading').value;
     const comment = document.getElementById('comment').value;
     const imageFile = document.getElementById('image').files[0];
@@ -17,17 +17,25 @@ generateBtn.addEventListener('click', (e) => {
 
     fetch('/generate', {
         method: 'POST',
-        body: formData,
+        body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        alert(data.message);
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('Error generating video. Please try again.');
-    });
+    .then(response => {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        const logTextarea = document.getElementById('progress-log');
 
-    console.log('Generate button clicked!');
+        function read() {
+            reader.read().then(({ done, value }) => {
+                if (done) {
+                    return;
+                }
+                logTextarea.value += decoder.decode(value);
+                logTextarea.scrollTop = logTextarea.scrollHeight;
+                read();
+            });
+        }
+
+        read();
+    })
+    .catch(error => console.error('Error:', error));
 });
